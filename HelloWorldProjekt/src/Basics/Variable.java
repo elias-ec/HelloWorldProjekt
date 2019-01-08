@@ -53,5 +53,31 @@ public class Variable {
 				System.out.println(System.currentTimeMillis());
 				// Aktuelle Zeit in MilliseKunden
 				// Vom ersten Jänner 1970 aus (hier begann das Zeitalter der Computer -> die meisten PCs rechenen daher von 1970)
-	}
+				//
+				//
+				//
+				//
+				//Bei der Float Variabel werden auch die Zahlen hinter dem Komma angezeigt
+				float floatVar;
+				floatVar = 10/3f; // 10/3.0
+				System.out.println(floatVar);
+				System.out.println(Float.MAX_VALUE);
+				System.out.println(Float.MIN_VALUE);
+				//
+				//
+				//
+				double doubleVar;
+				doubleVar = 10/3d; //10/3.0
+				System.out.println("Double: ");
+				System.out.println(doubleVar);
+				//
+				System.out.println("Float: ");
+				System.out.println(floatVar);
+				//
+				//
+				//Mit der String Variabel kann man Wörter speichern
+				String stringVar;
+				stringVar = "Hallo Elias";
+				System.out.println(stringVar);
+				}
 }
