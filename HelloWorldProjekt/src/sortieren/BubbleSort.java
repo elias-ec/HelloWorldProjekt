@@ -11,7 +11,7 @@ public class BubbleSort {
 			System.out.println(zahlen[i]);
 		}
 		//
-		System.out.println("----------------------");
+		System.out.println("Bubblesort");
 		//
 		// Bubblesort
 		for (int z = zahlen.length; z > 1; z--) {
