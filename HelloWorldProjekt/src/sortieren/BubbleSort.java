@@ -4,17 +4,28 @@ public class BubbleSort {
 
 	public static void main(String[] args) {
 		// Bubblesort Array
-		System.out.println("Zahlen (ungeordnet):");
+//Länge der Reihe
+		int[] zahlen = { 3, 1, 9, 5, 2, 8, 6, 5, 18 };
+		System.out.println("Die Reihe hat " + zahlen.length + " Zahlen");
+		for (int i = 0; i < zahlen.length; i++) {
+			System.out.println(zahlen[i]);
+		}
 		//
-		int[] zahlen = { 3, 1, 9, 5, 2, 8, 6, 5 };
-		System.out.println(zahlen);
-		 for (int n=zahlen.length; n>1; --n){
-			    for (int i=0; i<n-1; ++i){
-			      if (zahlen[i] > zahlen[i+1]){
-			       
-			    		  
-			      } 
-			  } 
+		System.out.println("----------------------");
+		//
+		// Bubblesort
+		for (int z = zahlen.length; z > 1; z--) {
+			for (int s = 0; s < z - 1; s++) {
+				if (zahlen[s] > zahlen[s + 1]) {
+					int a = zahlen[s];
+					zahlen[s] = zahlen[s + 1];
+					zahlen[s + 1] = a;
+
+				}
+			}
+		}
+		for (int i = 0; i < zahlen.length; i++) {
+			System.out.println(zahlen[i]);
 		}
 
 	}
