@@ -9,6 +9,9 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.wb.swt.SWTResourceManager;
+
+import data.Person;
+
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.events.MouseMoveListener;
@@ -93,6 +96,30 @@ public class MJyfirstGUIwindow {
 				getHausnummerOUT().setText(hausnummerTF.getText());
 				getWohnortOUT().setText(wohnortTF.getText());
 				getPlzOUT().setText(plzTF.getText());
+				//
+				Person p1; //Variablen Def.
+				p1 = new Person(); //Instanzierung
+				//
+				p1.setVorname(getVornameTF().getText());
+				p1.setNachname(getNachnameTF().getText());
+				p1.setStrasse(getStrasseTF().getText());
+				p1.setHausnummer(getHausnummerTF().getText());
+				p1.setPlz(getPlzTF().getText());
+				p1.setWohnort(getWohnortTF().getText());
+				//
+				System.out.println(p1);
+				//
+				Person.getListe().add(p1);
+				//
+				System.out.print(Person.getListe());
+				//
+				getVornameTF().setText("");
+				getNachnameTF().setText("");
+				getStrasseTF().setText("");
+				getHausnummerTF().setText("");
+				getPlzTF().setText("");
+				getWohnortTF().setText("");
+				
 				
 			}
 		});
