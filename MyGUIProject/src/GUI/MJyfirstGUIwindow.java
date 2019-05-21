@@ -10,6 +10,9 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.wb.swt.SWTResourceManager;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import data.Person;
 
 import org.eclipse.swt.widgets.Control;
@@ -208,6 +211,18 @@ public class MJyfirstGUIwindow {
 		plzOUT = new Label(shlWindow, SWT.NONE);
 		plzOUT.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		plzOUT.setBounds(296, 192, 120, 15);
+		
+		Button btnJson = new Button(shlWindow, SWT.NONE);
+		btnJson.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Gson gson = new GsonBuilder().setPrettyPrinting().create();
+				//
+				System.out.println(gson.toJson(Person.getListe()));
+			}
+		});
+		btnJson.setBounds(322, 232, 75, 25);
+		btnJson.setText("json");
 		shlWindow.setTabList(new Control[]{vornameTF, nachnameTF, strasseTF, hausnummerTF, wohnortTF, plzTF, btnMybutton});
 
 	}
