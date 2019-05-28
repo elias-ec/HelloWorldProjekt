@@ -1,8 +1,14 @@
 package GUI;
 
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Button;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -76,7 +82,7 @@ public class MJyfirstGUIwindow {
 	protected void createContents() {
 		shlWindow = new Shell();
 		shlWindow.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
-		shlWindow.setSize(500, 310);
+		shlWindow.setSize(450, 310);
 		shlWindow.setText("FR Window");
 		
 		Button btnMybutton = new Button(shlWindow, SWT.NONE);
@@ -126,7 +132,7 @@ public class MJyfirstGUIwindow {
 				
 			}
 		});
-		btnMybutton.setBounds(157, 232, 75, 25);
+		btnMybutton.setBounds(57, 232, 75, 25);
 		btnMybutton.setText("Abschicken");
 		
 		Label VornameL = new Label(shlWindow, SWT.NONE);
@@ -185,7 +191,7 @@ public class MJyfirstGUIwindow {
 				System.exit(0);
 			}
 		});
-		btnAbbrechen.setBounds(238, 232, 75, 25);
+		btnAbbrechen.setBounds(138, 232, 75, 25);
 		btnAbbrechen.setText("Abbrechen");
 		
 		vornameOUT = new Label(shlWindow, SWT.NONE);
@@ -218,11 +224,41 @@ public class MJyfirstGUIwindow {
 			public void widgetSelected(SelectionEvent e) {
 				Gson gson = new GsonBuilder().setPrettyPrinting().create();
 				//
-				System.out.println(gson.toJson(Person.getListe()));
+				//System.out.println(gson.toJson(Person.getListe()));
+				//
+				try {
+					File jsonFile = File.createTempFile("wpfinf-json-", ".efile");
+					FileWriter fw = new FileWriter(jsonFile);
+					//
+					gson.toJson(Person.getListe(), fw);
+					//
+					fw.flush();
+					fw.close();
+					//
+					//Explorer öffnen: %TEMPS%
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
-		btnJson.setBounds(322, 232, 75, 25);
+		btnJson.setBounds(219, 232, 75, 25);
 		btnJson.setText("json");
+		
+		Button Load = new Button(shlWindow, SWT.NONE);
+		Load.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				FileDialog fd = new FileDialog(shlWindow, SWT.OPEN);
+				//
+				fd.setFilterExtensions(new String[] {"efile"});
+				fd.setFilterPath("%TEMP%");
+				//
+				fd.open();
+			}
+		});
+		Load.setBounds(300, 232, 75, 25);
+		Load.setText("Load");
 		shlWindow.setTabList(new Control[]{vornameTF, nachnameTF, strasseTF, hausnummerTF, wohnortTF, plzTF, btnMybutton});
 
 	}
