@@ -6,8 +6,12 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Button;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -251,10 +255,28 @@ public class MJyfirstGUIwindow {
 			public void widgetSelected(SelectionEvent e) {
 				FileDialog fd = new FileDialog(shlWindow, SWT.OPEN);
 				//
-				fd.setFilterExtensions(new String[] {"efile"});
+				fd.setFilterExtensions(new String[] {"*.efile"});
 				fd.setFilterPath("%TEMP%");
 				//
-				fd.open();
+				String filename = fd.open();
+				//
+				System.out.println(filename);
+				//
+				try {
+					if (filename != null) { //  != heiﬂt ungleich
+						FileReader fr = new FileReader(filename);
+						//
+						Gson gson = new GsonBuilder().setPrettyPrinting().create();
+						//
+						Person[] personen = gson.fromJson(fr, Person[].class);
+						//
+						ArrayList<Person> personenListe = new ArrayList<Person>(Arrays.asList(personen));
+						//
+					}
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		Load.setBounds(300, 232, 75, 25);
