@@ -54,6 +54,7 @@ public class MJyfirstGUIwindow {
 
 	/**
 	 * Launch the application.
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -88,7 +89,7 @@ public class MJyfirstGUIwindow {
 		shlWindow.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
 		shlWindow.setSize(450, 310);
 		shlWindow.setText("FR Window");
-		
+
 		Button btnMybutton = new Button(shlWindow, SWT.NONE);
 		btnMybutton.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_SELECTION_TEXT));
 		btnMybutton.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_FOREGROUND));
@@ -110,8 +111,8 @@ public class MJyfirstGUIwindow {
 				getWohnortOUT().setText(wohnortTF.getText());
 				getPlzOUT().setText(plzTF.getText());
 				//
-				Person p1; //Variablen Def.
-				p1 = new Person(); //Instanzierung
+				Person p1; // Variablen Def.
+				p1 = new Person(); // Instanzierung
 				//
 				p1.setVorname(getVornameTF().getText());
 				p1.setNachname(getNachnameTF().getText());
@@ -132,103 +133,102 @@ public class MJyfirstGUIwindow {
 				getHausnummerTF().setText("");
 				getPlzTF().setText("");
 				getWohnortTF().setText("");
-				
-				
+
 			}
 		});
 		btnMybutton.setBounds(57, 232, 75, 25);
 		btnMybutton.setText("Abschicken");
-		
+
 		Label VornameL = new Label(shlWindow, SWT.NONE);
 		VornameL.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
 		VornameL.setBounds(57, 28, 55, 15);
 		VornameL.setText("Vorname");
-		
+
 		nachnameL = new Label(shlWindow, SWT.NONE);
 		nachnameL.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
 		nachnameL.setBounds(57, 64, 65, 15);
 		nachnameL.setText("Nachname");
-		
+
 		wohnortL = new Label(shlWindow, SWT.NONE);
 		wohnortL.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
 		wohnortL.setBounds(57, 163, 55, 15);
 		wohnortL.setText("Wohnort");
-		
+
 		hausnummerL = new Label(shlWindow, SWT.NONE);
 		hausnummerL.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
 		hausnummerL.setBounds(57, 133, 75, 15);
 		hausnummerL.setText("Hausnummer");
-		
+
 		plzL = new Label(shlWindow, SWT.NONE);
 		plzL.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
 		plzL.setBounds(57, 192, 55, 15);
 		plzL.setText("PLZ");
-		
+
 		StrasseL = new Label(shlWindow, SWT.NONE);
 		StrasseL.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
 		StrasseL.setBounds(57, 99, 55, 15);
 		StrasseL.setText("Stra\u00DFe");
-		
+
 		nachnameTF = new Text(shlWindow, SWT.BORDER);
 		nachnameTF.setBounds(157, 58, 120, 21);
-		
+
 		vornameTF = new Text(shlWindow, SWT.BORDER);
 		vornameTF.setBounds(157, 22, 120, 21);
-		
+
 		strasseTF = new Text(shlWindow, SWT.BORDER);
 		strasseTF.setBounds(157, 93, 120, 21);
-		
+
 		hausnummerTF = new Text(shlWindow, SWT.BORDER);
 		hausnummerTF.setBounds(157, 127, 120, 21);
-		
+
 		wohnortTF = new Text(shlWindow, SWT.BORDER);
 		wohnortTF.setBounds(157, 157, 120, 21);
-		
+
 		plzTF = new Text(shlWindow, SWT.BORDER);
 		plzTF.setBounds(157, 186, 120, 21);
-		
+
 		btnAbbrechen = new Button(shlWindow, SWT.NONE);
 		btnAbbrechen.setBackground(SWTResourceManager.getColor(SWT.COLOR_LIST_BACKGROUND));
 		btnAbbrechen.addSelectionListener(new SelectionAdapter() {
-		
+
 			public void widgetSelected(SelectionEvent e) {
 				System.exit(0);
 			}
 		});
 		btnAbbrechen.setBounds(138, 232, 75, 25);
 		btnAbbrechen.setText("Abbrechen");
-		
+
 		vornameOUT = new Label(shlWindow, SWT.NONE);
 		vornameOUT.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		vornameOUT.setBounds(296, 28, 120, 15);
-		
+
 		nachnameOUT = new Label(shlWindow, SWT.NONE);
 		nachnameOUT.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		nachnameOUT.setBounds(296, 64, 120, 15);
-		
+
 		strasseOUT = new Label(shlWindow, SWT.NONE);
 		strasseOUT.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		strasseOUT.setBounds(296, 99, 120, 15);
-		
+
 		hausnummerOUT = new Label(shlWindow, SWT.NONE);
 		hausnummerOUT.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		hausnummerOUT.setBounds(296, 133, 120, 15);
-		
+
 		wohnortOUT = new Label(shlWindow, SWT.NONE);
 		wohnortOUT.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		wohnortOUT.setBounds(296, 163, 120, 15);
-		
+
 		plzOUT = new Label(shlWindow, SWT.NONE);
 		plzOUT.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		plzOUT.setBounds(296, 192, 120, 15);
-		
+
 		Button btnJson = new Button(shlWindow, SWT.NONE);
 		btnJson.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				Gson gson = new GsonBuilder().setPrettyPrinting().create();
 				//
-				//System.out.println(gson.toJson(Person.getListe()));
+				// System.out.println(gson.toJson(Person.getListe()));
 				//
 				try {
 					File jsonFile = File.createTempFile("wpfinf-json-", ".efile");
@@ -239,7 +239,7 @@ public class MJyfirstGUIwindow {
 					fw.flush();
 					fw.close();
 					//
-					//Explorer öffnen: %TEMPS%
+					// Explorer öffnen: %TEMPS%
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -248,14 +248,14 @@ public class MJyfirstGUIwindow {
 		});
 		btnJson.setBounds(219, 232, 75, 25);
 		btnJson.setText("json");
-		
+
 		Button Load = new Button(shlWindow, SWT.NONE);
 		Load.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				FileDialog fd = new FileDialog(shlWindow, SWT.OPEN);
 				//
-				fd.setFilterExtensions(new String[] {"*.efile"});
+				fd.setFilterExtensions(new String[] { "*.efile" });
 				fd.setFilterPath("%TEMP%");
 				//
 				String filename = fd.open();
@@ -263,7 +263,7 @@ public class MJyfirstGUIwindow {
 				System.out.println(filename);
 				//
 				try {
-					if (filename != null) { //  != heißt ungleich
+					if (filename != null) { // != heißt ungleich
 						FileReader fr = new FileReader(filename);
 						//
 						Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -271,6 +271,10 @@ public class MJyfirstGUIwindow {
 						Person[] personen = gson.fromJson(fr, Person[].class);
 						//
 						ArrayList<Person> personenListe = new ArrayList<Person>(Arrays.asList(personen));
+						//
+						System.out.println(personenListe);
+						//
+						Person.setListe(personenListe);
 						//
 					}
 				} catch (FileNotFoundException e1) {
@@ -281,42 +285,55 @@ public class MJyfirstGUIwindow {
 		});
 		Load.setBounds(300, 232, 75, 25);
 		Load.setText("Load");
-		shlWindow.setTabList(new Control[]{vornameTF, nachnameTF, strasseTF, hausnummerTF, wohnortTF, plzTF, btnMybutton});
+		shlWindow.setTabList(
+				new Control[] { vornameTF, nachnameTF, strasseTF, hausnummerTF, wohnortTF, plzTF, btnMybutton });
 
 	}
+
 	public Text getNachnameTF() {
 		return nachnameTF;
 	}
+
 	public Text getVornameTF() {
 		return vornameTF;
 	}
+
 	public Text getStrasseTF() {
 		return strasseTF;
 	}
+
 	public Text getHausnummerTF() {
 		return hausnummerTF;
 	}
+
 	public Text getWohnortTF() {
 		return wohnortTF;
 	}
+
 	public Text getPlzTF() {
 		return plzTF;
 	}
+
 	public Label getVornameOUT() {
 		return vornameOUT;
 	}
+
 	public Label getNachnameOUT() {
 		return nachnameOUT;
 	}
+
 	public Label getStrasseOUT() {
 		return strasseOUT;
 	}
+
 	public Label getHausnummerOUT() {
 		return hausnummerOUT;
 	}
+
 	public Label getWohnortOUT() {
 		return wohnortOUT;
 	}
+
 	public Label getPlzOUT() {
 		return plzOUT;
 	}

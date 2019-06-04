@@ -9,6 +9,9 @@ public class Person {
 	public static ArrayList<Person> getListe() {
 		return Liste;
 	}
+	public static void setListe(ArrayList<Person> liste) {
+		Liste = liste;
+	}
 	//
 	public String getVorname() {
 		return vorname;
